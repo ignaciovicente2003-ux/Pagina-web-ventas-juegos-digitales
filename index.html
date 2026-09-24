@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusPlay | Venta de Juegos Digitales</title>
+    <title>Tus Juegos Digitales Argentina</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -13,6 +13,7 @@
             --bg-card: #1e2238;
             --accent-purple: #8b5cf6;
             --accent-cyan: #06b6d4;
+            --accent-whatsapp: #22c55e;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border-color: #2a2f4c;
@@ -47,7 +48,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
@@ -60,7 +61,7 @@
 
         .search-bar {
             flex: 1;
-            max-width: 450px;
+            max-width: 400px;
             margin: 0 2rem;
             position: relative;
         }
@@ -128,20 +129,37 @@
             background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(6, 182, 212, 0.15));
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             margin-bottom: 2rem;
         }
 
         .hero-banner h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 0.5rem;
             font-weight: 800;
         }
 
         .hero-banner p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .delivery-notice {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            text-align: center;
         }
 
         .filters {
@@ -208,7 +226,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(5px);
             padding: 4px 8px;
             border-radius: 4px;
@@ -244,32 +262,33 @@
         }
 
         .game-price {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: var(--text-main);
         }
 
-        .buy-btn {
+        .add-btn {
             background-color: var(--accent-cyan);
             color: var(--bg-main);
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.85rem;
             border-radius: 6px;
             font-weight: 700;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: opacity 0.2s;
         }
 
-        .buy-btn:hover {
+        .add-btn:hover {
             opacity: 0.9;
         }
 
-        /* Carrito Lateral */
+        /* Carrito / Panel Lateral de Reserva */
         .cart-drawer {
             position: fixed;
             top: 0;
-            right: -400px;
-            width: 380px;
+            right: -420px;
+            width: 400px;
             height: 100%;
             background-color: var(--bg-panel);
             border-left: 1px solid var(--border-color);
@@ -345,20 +364,31 @@
         .total-row {
             display: flex;
             justify-content: space-between;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .checkout-btn {
+        .whatsapp-checkout-btn {
             width: 100%;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            background-color: var(--accent-whatsapp);
             color: white;
             border: none;
-            padding: 0.75rem;
+            padding: 0.85rem;
             border-radius: 8px;
             font-weight: 700;
+            font-size: 1rem;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: opacity 0.2s;
+            margin-bottom: 0.5rem;
+        }
+
+        .whatsapp-checkout-btn:hover {
+            opacity: 0.9;
         }
 
         .overlay {
@@ -388,64 +418,73 @@
 
     <header>
         <div class="logo">
-            <i class="fa-solid fa-gamepad"></i> NexusPlay
+            <i class="fa-solid fa-gamepad"></i> TUS JUEGOS DIGITALES ARG
         </div>
         <div class="search-bar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchInput" placeholder="Buscar juegos digitales...">
+            <input type="text" id="searchInput" placeholder="Buscar juegos en el catálogo...">
         </div>
         <button class="cart-btn" id="cartToggle">
-            <i class="fa-solid fa-cart-shopping"></i> Carrito
+            <i class="fa-solid fa-cart-shopping"></i> Reserva
             <span class="cart-badge" id="cartCount">0</span>
         </button>
     </header>
 
     <div class="main-container">
         <div class="hero-banner">
-            <h1>Tus juegos digitales al instante</h1>
-            <p>Claves originales, entrega inmediata y las mejores ofertas del mercado gamer.</p>
+            <h1>Tus Juegos Digitales Argentina</h1>
+            <p>Armá tu pedido, reservá tus títulos favoritos y completá la compra de forma personalizada.</p>
+        </div>
+
+        <div class="delivery-notice">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+            <span><strong>Método de entrega:</strong> Las descargas se realizan de manera 100% digital a través de un link directo de Google Drive enviado por WhatsApp o Mail.</span>
         </div>
 
         <div class="filters" id="categoryFilters">
             <button class="filter-btn active" data-category="all">Todos</button>
             <button class="filter-btn" data-category="Acción">Acción</button>
             <button class="filter-btn" data-category="RPG">RPG</button>
+            <button class="filter-btn" data-category="Deportes">Deportes</button>
             <button class="filter-btn" data-category="Estrategia">Estrategia</button>
-            <button class="filter-btn" data-category="Indie">Indie</button>
         </div>
 
         <div class="games-grid" id="gamesGrid">
-            <!-- Los juegos se cargan dinámicamente con JS -->
+            <!-- Cargado por JavaScript -->
         </div>
     </div>
 
-    <!-- Carrito Desplegable -->
+    <!-- Panel Lateral de Reserva -->
     <div class="overlay" id="overlay"></div>
     <div class="cart-drawer" id="cartDrawer">
         <div class="cart-header">
-            <h3>Tu Carrito de Compras</h3>
+            <h3>Tus Juegos a Reservar</h3>
             <button class="close-cart" id="closeCart"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cartItems">
-            <p style="color: var(--text-muted); text-align: center; margin-top: 2rem;">El carrito está vacío</p>
+            <p style="color: var(--text-muted); text-align: center; margin-top: 2rem;">No hay juegos seleccionados</p>
         </div>
         <div class="cart-footer">
             <div class="total-row">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
+                <span>Total Estimado:</span>
+                <span id="cartTotal">$0 ARS</span>
             </div>
-            <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+            <button class="whatsapp-checkout-btn" id="whatsappCheckoutBtn">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Finalizar por WhatsApp
+            </button>
+            <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 8px;">Se abrirá WhatsApp con el detalle para coordinar el pago y el link de Google Drive.</p>
         </div>
     </div>
 
     <script>
+        // Catálogo de Juegos (Puedes editar nombres, precios y categorías aquí)
         const games = [
-            { id: 1, title: "Cyber Odyssey", dev: "FutureSoft", price: 29.99, category: "Acción", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&q=80" },
-            { id: 2, title: "Shadow Legends", dev: "Mythic Realm", price: 39.99, category: "RPG", image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=80" },
-            { id: 3, title: "Galaxy Tactics", dev: "Stellar Games", price: 19.99, category: "Estrategia", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80" },
-            { id: 4, title: "Pixel Dungeon", dev: "RetroBit", price: 9.99, category: "Indie", image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=500&q=80" },
-            { id: 5, title: "Apex Vanguard", dev: "Iron Forge", price: 49.99, category: "Acción", image: "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=500&q=80" },
-            { id: 6, title: "Eldoria Chronicles", dev: "Lore Weaver", price: 59.99, category: "RPG", image: "https://images.unsplash.com/photo-1612287233002-91d0f53267c3?auto=format&fit=crop&w=500&q=80" }
+            { id: 1, title: "Grand Theft Auto V", dev: "Rockstar Games", price: 4500, category: "Acción", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&q=80" },
+            { id: 2, title: "FIFA / EA Sports FC", dev: "EA Sports", price: 6200, category: "Deportes", image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=80" },
+            { id: 3, title: "Minecraft Java & Bedrock", dev: "Mojang Studios", price: 3500, category: "Estrategia", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80" },
+            { id: 4, title: "The Witcher 3: Wild Hunt", dev: "CD Projekt Red", price: 4000, category: "RPG", image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=500&q=80" },
+            { id: 5, title: "God of War", dev: "Santa Monica Studio", price: 5800, category: "Acción", image: "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=500&q=80" },
+            { id: 6, title: "Elden Ring", dev: "FromSoftware", price: 7500, category: "RPG", image: "https://images.unsplash.com/photo-1612287233002-91d0f53267c3?auto=format&fit=crop&w=500&q=80" }
         ];
 
         let cart = [];
@@ -460,12 +499,15 @@
         const cartCount = document.getElementById('cartCount');
         const cartTotal = document.getElementById('cartTotal');
         const categoryFilters = document.getElementById('categoryFilters');
-        const checkoutBtn = document.getElementById('checkoutBtn');
+        const whatsappCheckoutBtn = document.getElementById('whatsappCheckoutBtn');
+
+        // Reemplaza este número con tu número de WhatsApp real (Ej: 54911XXXXXXXX sin el +)
+        const tuNumeroWhatsApp = "5491100000000"; 
 
         function renderGames(gamesToRender) {
             gamesGrid.innerHTML = '';
             if (gamesToRender.length === 0) {
-                gamesGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No se encontraron juegos.</p>`;
+                gamesGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No se encontraron juegos en el catálogo.</p>`;
                 return;
             }
             gamesToRender.forEach(game => {
@@ -482,8 +524,8 @@
                             <p class="game-dev">${game.dev}</p>
                         </div>
                         <div class="game-footer">
-                            <span class="game-price">$${game.price.toFixed(2)}</span>
-                            <button class="buy-btn" onclick="addToCart(${game.id})">Comprar</button>
+                            <span class="game-price">$${game.price.toLocaleString()} ARS</span>
+                            <button class="add-btn" onclick="addToCart(${game.id})"><i class="fa-solid fa-plus"></i> Reservar</button>
                         </div>
                     </div>
                 `;
@@ -506,8 +548,8 @@
         function updateCart() {
             cartCount.textContent = cart.length;
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `<p style="color: var(--text-muted); text-align: center; margin-top: 2rem;">El carrito está vacío</p>`;
-                cartTotal.textContent = '$0.00';
+                cartItemsContainer.innerHTML = `<p style="color: var(--text-muted); text-align: center; margin-top: 2rem;">No hay juegos seleccionados</p>`;
+                cartTotal.textContent = '$0 ARS';
                 return;
             }
 
@@ -520,13 +562,13 @@
                 itemEl.innerHTML = `
                     <div class="cart-item-details">
                         <h4>${item.title}</h4>
-                        <span>$${item.price.toFixed(2)}</span>
+                        <span>$${item.price.toLocaleString()} ARS</span>
                     </div>
                     <button class="remove-item" onclick="removeFromCart(${index})"><i class="fa-solid fa-trash"></i></button>
                 `;
                 cartItemsContainer.appendChild(itemEl);
             });
-            cartTotal.textContent = `$${total.toFixed(2)}`;
+            cartTotal.textContent = `$${total.toLocaleString()} ARS`;
         }
 
         function openCartDrawer() {
@@ -561,12 +603,21 @@
             }
         });
 
-        checkoutBtn.addEventListener('click', () => {
+        // Enviar pedido por WhatsApp
+        whatsappCheckoutBtn.addEventListener('click', () => {
             if (cart.length === 0) return;
-            alert('¡Compra simulada con éxito! Gracias por probar tu tienda de juegos digitales.');
-            cart = [];
-            updateCart();
-            closeCartDrawer();
+            
+            let mensaje = "¡Hola! Quiero reservar los siguientes juegos digitales:\n\n";
+            let total = 0;
+            cart.forEach(item => {
+                mensaje += `- *${item.title}* ($${item.price.toLocaleString()} ARS)\n`;
+                total += item.price;
+            });
+            mensaje += `\n*Total a abonar:* $${total.toLocaleString()} ARS\n`;
+            mensaje += `¿Cómo seguimos para abonar y recibir el link de Google Drive?`;
+
+            const urlWsp = `https://wa.me/${tuNumeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+            window.open(urlWsp, '_blank');
         });
 
         renderGames(games);
