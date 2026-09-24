@@ -210,21 +210,15 @@
         }
 
         .game-img-container {
-            height: 150px;
+            height: 120px;
             background-color: #2b3154;
             position: relative;
             overflow: hidden;
-        }
-
-        .game-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .game-card:hover .game-img-container img {
-            transform: scale(1.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-cyan);
+            font-size: 2.5rem;
         }
 
         .game-tag {
@@ -493,80 +487,80 @@
     </div>
 
     <script>
-        // Catálogo completo con portadas y precios personalizados
+        // Catálogo completo con precios personalizados
         const games = [
             // F1 ($5000)
-            { id: 1, title: "F1 2010", category: "F1", price: 5000, desc: "Temporada clásica de F1. Preinstalado, listo para jugar.", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=500&q=80" },
-            { id: 2, title: "F1 2011", category: "F1", price: 5000, desc: "Incluye launcher y soporte multijugador local.", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80" },
-            { id: 3, title: "F1 2012", category: "F1", price: 5000, desc: "Una de las entregas más queridas de la saga.", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" },
-            { id: 4, title: "F1 2013", category: "F1", price: 5000, desc: "Modo clásico con monoplazas y circuitos históricos.", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80" },
-            { id: 5, title: "F1 2014", category: "F1", price: 5000, desc: "Transición a la era híbrida de la categoría.", image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=500&q=80" },
-            { id: 6, title: "F1 2015", category: "F1", price: 5000, desc: "Gráficos renovados y física mejorada.", image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80" },
-            { id: 7, title: "F1 2016", category: "F1", price: 5000, desc: "Modo carrera profundo de 10 temporadas.", image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
-            { id: 8, title: "F1 2017", category: "F1", price: 5000, desc: "Autos clásicos icónicos y gestión avanzada.", image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=500&q=80" },
-            { id: 9, title: "F1 2018", category: "F1", price: 5000, desc: "Entrevistas de prensa y desarrollo de monoplazas.", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80" },
-            { id: 10, title: "F1 2019", category: "F1", price: 5000, desc: "Incluye la F2 y rivalidad con Ayrton Senna y Alain Prost.", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" },
-            { id: 11, title: "F1 2020", category: "F1", price: 5000, desc: "Modo 'My Team' para crear tu propia escudería.", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=500&q=80" },
-            { id: 12, title: "F1 Race Stars", category: "F1", price: 5000, desc: "Estilo arcade divertido con pilotos cabezones.", image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=80" },
+            { id: 1, title: "F1 2010", category: "F1", price: 5000, desc: "Temporada clásica de F1. Preinstalado, listo para jugar." },
+            { id: 2, title: "F1 2011", category: "F1", price: 5000, desc: "Incluye launcher y soporte multijugador local." },
+            { id: 3, title: "F1 2012", category: "F1", price: 5000, desc: "Una de las entregas más queridas de la saga." },
+            { id: 4, title: "F1 2013", category: "F1", price: 5000, desc: "Modo clásico con monoplazas y circuitos históricos." },
+            { id: 5, title: "F1 2014", category: "F1", price: 5000, desc: "Transición a la era híbrida de la categoría." },
+            { id: 6, title: "F1 2015", category: "F1", price: 5000, desc: "Gráficos renovados y física mejorada." },
+            { id: 7, title: "F1 2016", category: "F1", price: 5000, desc: "Modo carrera profundo de 10 temporadas." },
+            { id: 8, title: "F1 2017", category: "F1", price: 5000, desc: "Autos clásicos icónicos y gestión avanzada." },
+            { id: 9, title: "F1 2018", category: "F1", price: 5000, desc: "Entrevistas de prensa y desarrollo de monoplazas." },
+            { id: 10, title: "F1 2019", category: "F1", price: 5000, desc: "Incluye la F2 y rivalidad con Ayrton Senna y Alain Prost." },
+            { id: 11, title: "F1 2020", category: "F1", price: 5000, desc: "Modo 'My Team' para crear tu propia escudería." },
+            { id: 12, title: "F1 Race Stars", category: "F1", price: 5000, desc: "Estilo arcade divertido con pilotos cabezones." },
 
             // FIFA ($7500)
-            { id: 13, title: "Fifa 2011", category: "FIFA", price: 7500, desc: "Personalidad en el juego y modo Be A Pro clásico.", image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=500&q=80" },
-            { id: 14, title: "Fifa 2012", category: "FIFA", price: 7500, desc: "Impact Engine revolucionario para choques realistas.", image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=500&q=80" },
-            { id: 15, title: "Fifa 2013", category: "FIFA", price: 7500, desc: "Control total del balón y inteligencia artificial avanzada.", image: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=500&q=80" },
-            { id: 16, title: "Fifa 2014", category: "FIFA", price: 7500, desc: "Disparos en burbuja y física de balón mejorada.", image: "https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=500&q=80" },
-            { id: 17, title: "Fifa 2015", category: "FIFA", price: 7500, desc: "Emociones de los jugadores y canchas dinámicas.", image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=500&q=80" },
-            { id: 18, title: "Fifa 2016", category: "FIFA", price: 7500, desc: "Incorporación de selecciones nacionales femeninas.", image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=500&q=80" },
-            { id: 19, title: "Fifa 2017", category: "FIFA", price: 7500, desc: "Primer año con el motor Frostbite y el inicio de 'El Trayecto'.", image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=500&q=80" },
-            { id: 20, title: "Fifa 2018", category: "FIFA", price: 7500, desc: "Continuación de la historia de Alex Hunter y estética UEFA.", image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=500&q=80" },
-            { id: 21, title: "Fifa 2019", category: "FIFA", price: 7500, desc: "Licencia oficial de la UEFA Champions League.", image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=500&q=80" },
-            { id: 22, title: "Fifa 2020", category: "FIFA", price: 7500, desc: "Modo VOLTA Football estilo callejero.", image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=500&q=80" },
-            { id: 23, title: "Fifa 2021", category: "FIFA", price: 7500, desc: "Novedades en el modo carrera y gráficos de nueva generación.", image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=500&q=80" },
-            { id: 24, title: "Fifa 2022", category: "FIFA", price: 7500, desc: "Tecnología HyperMotion para movimientos ultra realistas.", image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=500&q=80" },
-            { id: 25, title: "Fifa 2023", category: "FIFA", price: 7500, desc: "Última entrega bajo el nombre FIFA con Crossplay.", image: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=500&q=80" },
+            { id: 13, title: "Fifa 2011", category: "FIFA", price: 7500, desc: "Personalidad en el juego y modo Be A Pro clásico." },
+            { id: 14, title: "Fifa 2012", category: "FIFA", price: 7500, desc: "Impact Engine revolucionario para choques realistas." },
+            { id: 15, title: "Fifa 2013", category: "FIFA", price: 7500, desc: "Control total del balón y inteligencia artificial avanzada." },
+            { id: 16, title: "Fifa 2014", category: "FIFA", price: 7500, desc: "Disparos en burbuja y física de balón mejorada." },
+            { id: 17, title: "Fifa 2015", category: "FIFA", price: 7500, desc: "Emociones de los jugadores y canchas dinámicas." },
+            { id: 18, title: "Fifa 2016", category: "FIFA", price: 7500, desc: "Incorporación de selecciones nacionales femeninas." },
+            { id: 19, title: "Fifa 2017", category: "FIFA", price: 7500, desc: "Primer año con el motor Frostbite y el inicio de 'El Trayecto'." },
+            { id: 20, title: "Fifa 2018", category: "FIFA", price: 7500, desc: "Continuación de la historia de Alex Hunter y estética UEFA." },
+            { id: 21, title: "Fifa 2019", category: "FIFA", price: 7500, desc: "Licencia oficial de la UEFA Champions League." },
+            { id: 22, title: "Fifa 2020", category: "FIFA", price: 7500, desc: "Modo VOLTA Football estilo callejero." },
+            { id: 23, title: "Fifa 2021", category: "FIFA", price: 7500, desc: "Novedades en el modo carrera y gráficos de nueva generación." },
+            { id: 24, title: "Fifa 2022", category: "FIFA", price: 7500, desc: "Tecnología HyperMotion para movimientos ultra realistas." },
+            { id: 25, title: "Fifa 2023", category: "FIFA", price: 7500, desc: "Última entrega bajo el nombre FIFA con Crossplay." },
 
             // Need for Speed ($2500)
-            { id: 26, title: "Need For Speed II SE", category: "Need for Speed", price: 2500, desc: "Clásico arcade de los 90s con súper deportivos.", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" },
-            { id: 27, title: "Need For Speed III - Hot Pursuit", category: "Need for Speed", price: 2500, desc: "Persecuciones policiales legendarias.", image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
-            { id: 28, title: "Need For Speed Carbon", category: "Need for Speed", price: 2500, desc: "Carreras nocturnas de cañón y bandas callejeras.", image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=500&q=80" },
-            { id: 29, title: "Need For Speed: High Stakes", category: "Need for Speed", price: 2500, desc: "Apuestas altas y daños realistas en vehículos.", image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80" },
-            { id: 30, title: "Need For Speed: Hot Pursuit 2", category: "Need for Speed", price: 2500, desc: "Acción desenfrenada en carreteras abiertas.", image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=500&q=80" },
-            { id: 31, title: "Need For Speed Most Wanted (2005)", category: "Need for Speed", price: 2500, desc: "La obra maestra de persecuciones y la Blacklist.", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" },
-            { id: 32, title: "Need For Speed: Porsche Unleashed", category: "Need for Speed", price: 2500, desc: "Un tributo completo a la historia de Porsche.", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" },
-            { id: 33, title: "Need For Speed Prostreet", category: "Need for Speed", price: 2500, desc: "Competencias legales en circuitos cerrados y picadas.", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80" },
-            { id: 34, title: "Need For Speed Shift", category: "Need for Speed", price: 2500, desc: "Simulador de conducción en pista con perspectiva de casco.", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=500&q=80" },
-            { id: 35, title: "Need For Speed Shift - All DLC", category: "Need for Speed", price: 2500, desc: "Versión completa con todos los contenidos adicionales.", image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
-            { id: 36, title: "Need For Speed Shift 2 Unleashed", category: "Need for Speed", price: 2500, desc: "Físicas extremas de noche y de día.", image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=500&q=80" },
-            { id: 37, title: "Need For Speed: The Run", category: "Need for Speed", price: 2500, desc: "Carrera clandestina de costa a costa en EE.UU.", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80" },
-            { id: 38, title: "Need For Speed Undercover", category: "Need for Speed", price: 2500, desc: "Infiltrado en redes criminales de alta velocidad.", image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=500&q=80" },
-            { id: 39, title: "Need For Speed Underground (1)", category: "Need for Speed", price: 2500, desc: "El pionero del tuning nocturno y luces de neón.", image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80" },
-            { id: 40, title: "Need For Speed Underground 2", category: "Need for Speed", price: 2500, desc: "Mundo abierto y personalización visual inigualable.", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" },
+            { id: 26, title: "Need For Speed II SE", category: "Need for Speed", price: 2500, desc: "Clásico arcade de los 90s con súper deportivos." },
+            { id: 27, title: "Need For Speed III - Hot Pursuit", category: "Need for Speed", price: 2500, desc: "Persecuciones policiales legendarias." },
+            { id: 28, title: "Need For Speed Carbon", category: "Need for Speed", price: 2500, desc: "Carreras nocturnas de cañón y bandas callejeras." },
+            { id: 29, title: "Need For Speed: High Stakes", category: "Need for Speed", price: 2500, desc: "Apuestas altas y daños realistas en vehículos." },
+            { id: 30, title: "Need For Speed: Hot Pursuit 2", category: "Need for Speed", price: 2500, desc: "Acción desenfrenada en carreteras abiertas." },
+            { id: 31, title: "Need For Speed Most Wanted (2005)", category: "Need for Speed", price: 2500, desc: "La obra maestra de persecuciones y la Blacklist." },
+            { id: 32, title: "Need For Speed: Porsche Unleashed", category: "Need for Speed", price: 2500, desc: "Un tributo completo a la historia de Porsche." },
+            { id: 33, title: "Need For Speed Prostreet", category: "Need for Speed", price: 2500, desc: "Competencias legales en circuitos cerrados y picadas." },
+            { id: 34, title: "Need For Speed Shift", category: "Need for Speed", price: 2500, desc: "Simulador de conducción en pista con perspectiva de casco." },
+            { id: 35, title: "Need For Speed Shift - All DLC", category: "Need for Speed", price: 2500, desc: "Versión completa con todos los contenidos adicionales." },
+            { id: 36, title: "Need For Speed Shift 2 Unleashed", category: "Need for Speed", price: 2500, desc: "Físicas extremas de noche y de día." },
+            { id: 37, title: "Need For Speed: The Run", category: "Need for Speed", price: 2500, desc: "Carrera clandestina de costa a costa en EE.UU." },
+            { id: 38, title: "Need For Speed Undercover", category: "Need for Speed", price: 2500, desc: "Infiltrado en redes criminales de alta velocidad." },
+            { id: 39, title: "Need For Speed Underground (1)", category: "Need for Speed", price: 2500, desc: "El pionero del tuning nocturno y luces de neón." },
+            { id: 40, title: "Need For Speed Underground 2", category: "Need for Speed", price: 2500, desc: "Mundo abierto y personalización visual inigualable." },
 
             // DiRT / Rally ($3000)
-            { id: 41, title: "Colin McRae Rally (1998)", category: "DiRT / Rally", price: 3000, desc: "El clásico que dio inicio al rally virtual.", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" },
-            { id: 42, title: "Colin McRae Rally 2.0", category: "DiRT / Rally", price: 3000, desc: "Jugabilidad arcade-simulación perfecta.", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" },
-            { id: 43, title: "Colin McRae Rally 3", category: "DiRT / Rally", price: 3000, desc: "Enfoque total en el campeonato con Ford.", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80" },
-            { id: 44, title: "Colin McRae Rally 04", category: "DiRT / Rally", price: 3000, desc: "Desafíos técnicos de tramos complejos.", image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
-            { id: 45, title: "Colin McRae Rally 2005", category: "DiRT / Rally", price: 3000, desc: "Modo carrera profesional y gráficos detallados.", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=500&q=80" },
-            { id: 46, title: "Colin McRae Rally 2014 (Remaster)", category: "DiRT / Rally", price: 3000, desc: "Adaptación moderna de los tramos clásicos.", image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=500&q=80" },
-            { id: 47, title: "Colin McRae: DiRT", category: "DiRT / Rally", price: 3000, desc: "Salto gráfico generacional con buggies y camiones.", image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=500&q=80" },
-            { id: 48, title: "Dirt 2", category: "DiRT / Rally", price: 3000, desc: "Festival de velocidad y carreras off-road extremas.", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80" },
-            { id: 49, title: "Dirt 3", category: "DiRT / Rally", price: 3000, desc: "Pruebas de Gymkhana con Ken Block.", image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80" },
-            { id: 50, title: "Dirt 4", category: "DiRT / Rally", price: 3000, desc: "Creación infinita de etapas con 'Your Stage'.", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" },
-            { id: 51, title: "DiRT Rally", category: "DiRT / Rally", price: 3000, desc: "Simulador puro y desafiante de rally.", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" },
-            { id: 52, title: "Dirt Showdown", category: "DiRT / Rally", price: 3000, desc: "Derbis de demolición y carreras de contacto.", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80" },
+            { id: 41, title: "Colin McRae Rally (1998)", category: "DiRT / Rally", price: 3000, desc: "El clásico que dio inicio al rally virtual." },
+            { id: 42, title: "Colin McRae Rally 2.0", category: "DiRT / Rally", price: 3000, desc: "Jugabilidad arcade-simulación perfecta." },
+            { id: 43, title: "Colin McRae Rally 3", category: "DiRT / Rally", price: 3000, desc: "Enfoque total en el campeonato con Ford." },
+            { id: 44, title: "Colin McRae Rally 04", category: "DiRT / Rally", price: 3000, desc: "Desafíos técnicos de tramos complejos." },
+            { id: 45, title: "Colin McRae Rally 2005", category: "DiRT / Rally", price: 3000, desc: "Modo carrera profesional y gráficos detallados." },
+            { id: 46, title: "Colin McRae Rally 2014 (Remaster)", category: "DiRT / Rally", price: 3000, desc: "Adaptación moderna de los tramos clásicos." },
+            { id: 47, title: "Colin McRae: DiRT", category: "DiRT / Rally", price: 3000, desc: "Salto gráfico generacional con buggies y camiones." },
+            { id: 48, title: "Dirt 2", category: "DiRT / Rally", price: 3000, desc: "Festival de velocidad y carreras off-road extremas." },
+            { id: 49, title: "Dirt 3", category: "DiRT / Rally", price: 3000, desc: "Pruebas de Gymkhana con Ken Block." },
+            { id: 50, title: "Dirt 4", category: "DiRT / Rally", price: 3000, desc: "Creación infinita de etapas con 'Your Stage'." },
+            { id: 51, title: "DiRT Rally", category: "DiRT / Rally", price: 3000, desc: "Simulador puro y desafiante de rally." },
+            { id: 52, title: "Dirt Showdown", category: "DiRT / Rally", price: 3000, desc: "Derbis de demolición y carreras de contacto." },
 
             // Otros ($3000)
-            { id: 53, title: "Driver: You Are The Wheelman!", category: "Otros", price: 3000, desc: "El clásico thriller de acción y conducción urbana.", image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" },
-            { id: 54, title: "Driver 2 (Redriver2)", category: "Otros", price: 3000, desc: "Segunda entrega con opción de salir a pie de los autos.", image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=500&q=80" },
-            { id: 55, title: "Driv3r", category: "Otros", price: 3000, desc: "Gráficos en 3D con misiones en Miami, Niza y Estambul.", image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80" },
-            { id: 56, title: "Driver: San Francisco", category: "Otros", price: 3000, desc: "Mecánica innovadora de 'Shift' para saltar entre vehículos.", image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=500&q=80" },
-            { id: 57, title: "Project CARS (GOTY)", category: "Otros", price: 3000, desc: "Simulador de automovilismo realista creado por fans.", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=500&q=80" },
-            { id: 58, title: "Project CARS 2 (All DLC)", category: "Otros", price: 3000, desc: "Clima dinámico avanzado y enorme variedad de pistas.", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" },
-            { id: 59, title: "MLB 2K9", category: "Otros", price: 3000, desc: "El clásico simulador de béisbol profesional.", image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=80" },
-            { id: 60, title: "MLB 2K10", category: "Otros", price: 3000, desc: "Controles refinados de lanzamiento y bateo.", image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=500&q=80" },
-            { id: 61, title: "MLB 2K11", category: "Otros", price: 3000, desc: "Modos franquicia y temporada detallados.", image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=500&q=80" },
-            { id: 62, title: "MLB Front Office Manager", category: "Otros", price: 3000, desc: "Juego de gestión y estrategia de gerencia de béisbol.", image: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=500&q=80" },
-            { id: 63, title: "Pro Evolution Soccer 2013", category: "Otros", price: 3000, desc: "El legendario PES 2013 con total libertad de control.", image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=500&q=80" }
+            { id: 53, title: "Driver: You Are The Wheelman!", category: "Otros", price: 3000, desc: "El clásico thriller de acción y conducción urbana." },
+            { id: 54, title: "Driver 2 (Redriver2)", category: "Otros", price: 3000, desc: "Segunda entrega con opción de salir a pie de los autos." },
+            { id: 55, title: "Driv3r", category: "Otros", price: 3000, desc: "Gráficos en 3D con misiones en Miami, Niza y Estambul." },
+            { id: 56, title: "Driver: San Francisco", category: "Otros", price: 3000, desc: "Mecánica innovadora de 'Shift' para saltar entre vehículos." },
+            { id: 57, title: "Project CARS (GOTY)", category: "Otros", price: 3000, desc: "Simulador de automovilismo realista creado por fans." },
+            { id: 58, title: "Project CARS 2 (All DLC)", category: "Otros", price: 3000, desc: "Clima dinámico avanzado y enorme variedad de pistas." },
+            { id: 59, title: "MLB 2K9", category: "Otros", price: 3000, desc: "El clásico simulador de béisbol profesional." },
+            { id: 60, title: "MLB 2K10", category: "Otros", price: 3000, desc: "Controles refinados de lanzamiento y bateo." },
+            { id: 61, title: "MLB 2K11", category: "Otros", price: 3000, desc: "Modos franquicia y temporada detallados." },
+            { id: 62, title: "MLB Front Office Manager", category: "Otros", price: 3000, desc: "Juego de gestión y estrategia de gerencia de béisbol." },
+            { id: 63, title: "Pro Evolution Soccer 2013", category: "Otros", price: 3000, desc: "El legendario PES 2013 con total libertad de control." }
         ];
 
         let cart = [];
@@ -597,7 +591,7 @@
                 card.className = 'game-card';
                 card.innerHTML = `
                     <div class="game-img-container">
-                        <img src="${game.image}" alt="${game.title}">
+                        <i class="fa-solid fa-gamepad"></i>
                         <span class="game-tag">${game.category}</span>
                     </div>
                     <div class="game-info">
